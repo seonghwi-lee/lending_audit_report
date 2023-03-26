@@ -105,4 +105,4 @@ participateBooks[msg.sender].eth_balance -= amount;
 (bool success, ) = payable(msg.sender).call{value: amount}("");
 ```
 
-변수에 변화한 값을 먼저 적용시킨 뒤 call을 하여 *`Checks-*Effects-Interactions` 패턴으로 작성한다면 re-entrancy를 통한 허용된 ether보다 많은 ether 출금을 막을 수 있게 된다.
+변수에 변화한 값을 먼저 적용시킨 뒤 call을 하여 `Checks-Effects-Interactions` 패턴으로 작성한다면 re-entrancy를 통해 허용된 ether보다 더 많은 ether 출금 시도를 막을 수 있게 된다.
